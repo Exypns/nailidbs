@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dokter;
+use App\Models\Spesialis;
 use Illuminate\Http\Request;
 
 class DokterController extends Controller
@@ -13,18 +14,22 @@ class DokterController extends Controller
     public function index()
     {
         $dokter = Dokter::latest();
+        $dokter_spesialis_id = Dokter::all();
+        $dokter_spesialis = Spesialis::all();
 
         if (request('search-dokter')) {
-            $dokter->where('nama', 'like', '%' . request('search-dokter') . '%');
+            // $dokter->where('nama', 'like', '%' . request('search-dokter') . '%');
                 //    ->orWhere('spesialis_id', 'like', '%' . request('search-dokter') . '%');
-            // $dokter->where('spesialis_id', 'like', '%' . request('search-dokter') . '%');
+            $dokter->where('spesialis_id', 'like', '%' . request('search-dokter') . '%');
         }
 
         // $title = 'Dokter';
         // return view('admin.backend.dokter', compact('dokter', 'title'));
         return view('admin.backend.dokter', [
             "title" => "Dokter",
-            "dokter" => $dokter->get()
+            "dokter" => $dokter->get(),
+            "spesialis" => $dokter_spesialis,
+            "dokter_spesialis_id" => $dokter_spesialis_id
         ]);
         // return view('backend.dokter', ['nama' => 'asda', 'spesialis' => 'aasf']);
     }

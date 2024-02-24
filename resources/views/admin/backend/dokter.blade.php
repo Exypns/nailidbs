@@ -17,10 +17,13 @@
           <label class="form-label">Cari Dokter</label>
           <input type="text" class="form-control" name="search-dokter">
         </div>
-        <select >
+        <select name="search-dokter">
           <option value="">Pilih Salah Satu</option>
-          <option value="1">Bedah</option>
-          <option value="2">Mata</option>
+              @foreach ($spesialis as $item)
+                  <option value="{{ $item->id }}">{{ $item->nama_spesialis }}</option>
+              @endforeach    
+          {{-- <option value="1">Bedah</option>
+          <option value="2">Mata</option> --}}
           {{-- @foreach ($dokter as $item)
           <option value="{{ $item->spesialis_id }}">{{ $item->spesialis->nama_spesialis }}</option>
           @endforeach --}}

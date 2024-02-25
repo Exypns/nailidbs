@@ -1,0 +1,98 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Nunito Sans, "Source Sans Pro";
+}
+/* Header */
+.pelayanan-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pelayanan-wrapper-content {
+    position: absolute;
+    /* background: rgba(0, 0, 0, 0.6); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.6s;
+}
+.pelayanan-wrapper img {
+    width: 100%;
+}
+.pelayanan-wrapper-img img {
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(<path-to-image>), lightgray 50% / cover no-repeat;
+    width: 100%;
+}
+.pelayanan-wrapper-content p {
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    line-height: normal;
+}
+.isi-galeri {
+    display: grid;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(330px,1fr));;
+}
+
+.card-gambar {
+    /* flex: 0 1 calc(33.33% - 40px); */
+
+    /* margin: 20px;
+    text-align: center; */
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.card-gambar img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries */
+ @media only screen and (max-width: 768px) {
+    .pelayanan-wrapper p {
+        font-size: 1.25rem; /* 12px pada ukuran font default */
+    }
+    /* .header img {
+        height: 180px;
+        margin-bottom: 20px;
+    } */
+
+    /* .header h3 {
+        font-size: 20px;
+    }
+
+    .isi-galeri .card-gambar {
+        flex: 0 1 calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    .isi-galeri .card-gambar {
+        flex: 0 1 calc(100% - 40px);
+       
+    } */
+} 

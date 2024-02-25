@@ -1,0 +1,137 @@
+
+h3 {
+    color: #FFF;
+    font-family: "Nunito Sans";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.header-isi-berita {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.isi-wrapper-content {
+    position: absolute;
+    /* background: rgba(0, 0, 0, 0.6); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.6s;
+}
+.header-isi-berita img {
+    width: 100%;
+}
+.header-isi-berita-img img {
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(<path-to-image>), lightgray 50% / cover no-repeat;
+    width: 100%;
+}
+.isi-wrapper-content h3 {
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.header-isi-berita h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 26px;
+}
+
+.section {
+    margin: 20px;
+}
+.judul-berita {
+    padding: 20px;
+    /* display: flex; */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.judul-berita img{
+    width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+
+}
+.judul-berita .pembungkusdata img {
+    width: 16px;
+    height: 16px;
+    display: inline;
+
+}
+.databerita{
+    display: flex;
+}
+.databerita p{
+    margin-left: 5px;
+}
+.pembungkusdata{
+    display: flex;
+    flex-direction: row
+    gap: 10px;
+    align-items: center;
+}
+ /* .icon{
+    display: inline;
+} */
+
+
+/* .judul-berita img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+} */
+
+.judul-berita h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.judul-berita p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.isi-berita {
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 767px) {
+    .judul-berita h2 {
+        font-size: 1.25rem; /* 20px pada ukuran font default */
+    }
+    .isi-wrapper-content h3{
+        font-size: 1rem ;
+    }
+
+    .judul-berita p {
+        font-size: 0.75rem; /* 12px pada ukuran font default */
+    }
+    .isi-berita p {
+        font-size: 0.75rem; /* 12px pada ukuran font default */
+
+    }
+}

@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Nunito Sans, "Source Sans Pro";
+}
+/* Header */
+.pelayanan-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pelayanan-wrapper-content {
+    position: absolute;
+    /* background: rgba(0, 0, 0, 0.6); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.6s;
+}
+.pelayanan-wrapper img {
+    width: 100%;
+}
+.pelayanan-wrapper-img img {
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(<path-to-image>), lightgray 50% / cover no-repeat;
+    width: 100%;
+}
+.pelayanan-wrapper-content p {
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    line-height: normal;
+}
+body {
+    font-family: "Nunito Sans";
+    margin: 0;
+    padding: 0;
+}
+
+.news-container {
+    display: grid;
+    justify-content: space-around;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    margin: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));;
+    grid-gap: 20px;
+}
+
+.news-item {
+    width: 386px;
+    height: 382px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+.news-item img {
+    width: 97%;
+    height: 227px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin: 4px;
+    top: 30px;
+}
+
+.read-more {
+    background-color: #F7961C;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.read-more:hover {
+    background-color: #fe8d03;
+}
+
+.news-item p{
+    text-align: left;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+    .pelayanan-wrapper p {
+        font-size: 1.25rem; /* 20px pada ukuran font default */
+    }
+
+
+    .news-item p {
+        font-size: 0.75rem; /* 12px pada ukuran font default */
+
+    }
+    .read-more button  {
+        font-size: 0.75rem; /* 12px pada ukuran font default */
+    }
+}

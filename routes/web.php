@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\LoginControlller;
+use App\Http\Controllers\RegisterController;
 use App\Models\Berita;
 use Illuminate\Support\Facades\Route;
 
@@ -37,8 +39,14 @@ Route::get('/fasilitas', function () {
 // ADMIN WEBPAGE
 
 Route::get('/naili-administrator', function () {
-    return view('admin/app', ['title' => 'Home']);
+    return view('admin.app', ['title' => 'Home']);
 });
+
+Route::get('/naili-administrator/login', [LoginControlller::class, 'index']);
+Route::post('/naili-administrator/login', [LoginControlller::class, 'authenticate']);
+
+Route::get('/naili-administrator/register', [RegisterController::class, 'index']);
+Route::post('/naili-administrator/register', [RegisterController::class, 'store']);
 
 Route::get('/naili-administrator/dokter', [DokterController::class, 'index'])->name('dokter');
 Route::post('tambahdokter', [DokterController::class, 'store']);

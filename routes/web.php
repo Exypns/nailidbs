@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokterController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\LoginControlller;
+use App\Http\Controllers\RegisterController;
+>>>>>>> 11244e66c68c5b4635ed46037234b4c68bfa2220
 use App\Models\Berita;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +39,7 @@ Route::get('/fasilitas', function () {
     return view('main/layouts/fasilitas');
 });
 
+<<<<<<< HEAD
 Route::get('/isi-berita', function () {
     return view('main/layouts/isi-berita');
 });
@@ -56,6 +62,20 @@ Route::get('/naili-administrator', function () {
     return view('admin/app', ['title' => 'Home']);
 });
 
+=======
+// ADMIN WEBPAGE
+
+Route::get('/naili-administrator', function () {
+    return view('admin.app', ['title' => 'Home']);
+});
+
+Route::get('/naili-administrator/login', [LoginControlller::class, 'index']);
+Route::post('/naili-administrator/login', [LoginControlller::class, 'authenticate']);
+
+Route::get('/naili-administrator/register', [RegisterController::class, 'index']);
+Route::post('/naili-administrator/register', [RegisterController::class, 'store']);
+
+>>>>>>> 11244e66c68c5b4635ed46037234b4c68bfa2220
 Route::get('/naili-administrator/dokter', [DokterController::class, 'index'])->name('dokter');
 Route::post('tambahdokter', [DokterController::class, 'store']);
 

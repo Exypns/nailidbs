@@ -9,7 +9,11 @@ class Dokter extends Model
 {
     use HasFactory;
 
+<<<<<<< HEAD
     // protected $fillable = ['nama'];
+=======
+    protected $fillable = ['nama'];
+>>>>>>> 11244e66c68c5b4635ed46037234b4c68bfa2220
     protected $guarded = ['id'];
     protected $with = ['spesialis', 'jadwal'];
 

@@ -53,6 +53,9 @@ Route::get('/artikel-kegiatan', function () {
     return view('main/layouts/artikel-kegiatan',['title'=> 'artikel-kegiatan']);
 });
 
+Route::get('/centre-of-excellence', function () {
+    return view('main/layouts/centre-of-excellence',['title'=> 'centre-of-excellence']);
+});
 
 // ADMIN WEBPAGE
 

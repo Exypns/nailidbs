@@ -105,6 +105,10 @@ a {
     background-color: var(--light-orange-color);
 }
 
+.nav__link.active {
+    color: #f7961c;
+}
+
 /* ==== MOBILE NAVIGATION ==== */
 @media screen and (max-width: 1118px) {
     .nav__menu {

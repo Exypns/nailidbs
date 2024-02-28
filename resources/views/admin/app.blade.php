@@ -37,6 +37,16 @@
   <link id="pagestyle" href="{{ asset('template/backend-2/assets/css/material-dashboard.css?v=3.0.0') }}" rel="stylesheet" />
   {{-- <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
   <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" /> --}}
+  {{-- TRIX EDITOR --}}
+  {{-- <link rel="stylesheet" type="text/css" href="{{ asset('sass/trix.scss') }}s">
+  <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script> --}}
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+  <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+  <style>
+    trix-toolbar [data-trix-button-group="file-tools"] {
+      display: none;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -51,7 +61,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white {{ $title === 'Home' ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator">
+          <a class="nav-link text-white {{ Request::is('naili-administrator') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -59,7 +69,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ $title === 'Berita' ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/berita">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/berita*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/berita">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -67,7 +77,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ $title === 'Dokter' ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/dokter">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/dokter*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/dokter">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -75,7 +85,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/billing.html">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/fasilitas*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/fasilitas">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
@@ -83,7 +93,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/virtual-reality.html">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/galeri*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/galeri">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">view_in_ar</i>
             </div>
@@ -91,15 +101,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/virtual-reality.html">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/home-header*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/home-header">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">view_in_ar</i>
             </div>
-            <span class="nav-link-text ms-1">Header</span>
+            <span class="nav-link-text ms-1">Home Header</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/rtl.html">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/kegiatan*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/kegiatan">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
             </div>
@@ -107,38 +117,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/notifications.html">
+          <a class="nav-link text-white {{ Request::is('naili-administrator/promo*') ?  'active bg-gradient-warning' : ''}}" href="/naili-administrator/promo">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">notifications</i>
             </div>
             <span class="nav-link-text ms-1">Promo</span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/profile.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/sign-in.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/sign-up.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
           </a>
         </li>
       </ul>
@@ -159,12 +142,24 @@
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
           </div>
           <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center">
+            {{-- <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Sign In</span>
               </a>
+            </li> --}}
+            <br>
+            @auth
+            <li class="nav-item d-flex align-items-center">
+              <form action="/logout" method="post" class="nav-link text-body font-weight-bold px-0">
+                @csrf
+                <button class="btn bg-gradient-danger w-100 mb-0 toast-btn">
+                <i class="material-icons opacity-10">logout</i>
+                <span class="d-sm-inline d-none">Logout</span></button>
+              </form>
             </li>
+            @endauth
+          
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -174,8 +169,29 @@
                 </div>
               </a>
             </li>
-
-          </ul>
+            <li class="nav-item px-3 d-flex align-items-center">
+            </li>
+            {{-- <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer"></i>
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <i class="material-icons opacity-10">logout</i>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          Logout
+                        </h6>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul> 
+            </li> --}}
         </div>
       </div>
     </nav>

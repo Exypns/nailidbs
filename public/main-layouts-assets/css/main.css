@@ -134,6 +134,10 @@ a {
     transition: background-color 0.3s;
 }
 
+.active__link {
+    color: #f7961c !important;
+}
+
 .nav__link:hover {
     background-color: var(--light-orange-color);
 }

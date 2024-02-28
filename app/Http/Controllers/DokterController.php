@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dokter;
+use App\Models\Jadwal;
 use App\Models\Spesialis;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DokterController extends Controller
 {
@@ -14,8 +16,7 @@ class DokterController extends Controller
     public function index()
     {
         $dokter = Dokter::latest();
-        $dokter_spesialis_id = Dokter::all();
-        $dokter_spesialis = Spesialis::all();
+        $spesialis = Spesialis::all();
 
         if (request('search-dokter')) {
             // $dokter->where('nama', 'like', '%' . request('search-dokter') . '%');
@@ -23,15 +24,11 @@ class DokterController extends Controller
             $dokter->where('spesialis_id', 'like', '%' . request('search-dokter') . '%');
         }
 
-        // $title = 'Dokter';
-        // return view('admin.backend.dokter', compact('dokter', 'title'));
         return view('admin.backend.dokter', [
             "title" => "Dokter",
             "dokter" => $dokter->get(),
-            "spesialis" => $dokter_spesialis,
-            "dokter_spesialis_id" => $dokter_spesialis_id
+            "spesialis" => $spesialis,
         ]);
-        // return view('backend.dokter', ['nama' => 'asda', 'spesialis' => 'aasf']);
     }
 
     /**
@@ -48,11 +45,24 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
-        Dokter::create([
-            'nama' => $request->nama,
-            'spesialis' => $request->spesialis
-        ]); 
-        return redirect('/dokter');
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'image' => 'image',
+        ]);
+
+        $validatedData['spesialis_id'] = $request->spesialis_id;
+        $validatedData['senin'] = $request->senin;
+        $validatedData['selasa'] = $request->selasa;
+        $validatedData['rabu'] = $request->rabu;
+        $validatedData['kamis'] = $request->kamis;
+        $validatedData['jumat'] = $request->jumat;
+        $validatedData['sabtu'] = $request->sabtu;
+        $validatedData['minggu'] = $request->minggu;
+
+        $validatedData['image'] = $request->file('image')->store('dokter-images');
+
+        Dokter::create($validatedData);
+        return redirect('/naili-administrator/dokter')->with('success', 'Dokter berhasil ditambahkan');
     }
 
     /**
@@ -66,24 +76,45 @@ class DokterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Dokter $dokter, $id)
+    public function edit(Dokter $dokter)
     {
-        $dokter = Dokter::find($id);
-        return view('admiin.backend.edit-dokter', compact('dokter'));
+        return view('admin.backend.dokter.edit', [
+            'title' => 'Edit Dokter',
+            'dokter' => $dokter,
+            'spesialis' => Spesialis::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dokter $dokter,$id)
+    public function update(Request $request, Dokter $dokter)
     {
-        //
-        $dokter = Dokter::find($id);
-        $dokter->update([
-            'nama' => $request->nama,
-            'spesialis' => $request->spesialis
-        ]);
-        return redirect('/dokter');
+        $rules = [
+            'nama' => 'required',
+            'image' => 'image',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $validatedData['spesialis_id'] = $request->spesialis_id;
+        $validatedData['senin'] = $request->senin;
+        $validatedData['selasa'] = $request->selasa;
+        $validatedData['rabu'] = $request->rabu;
+        $validatedData['kamis'] = $request->kamis;
+        $validatedData['jumat'] = $request->jumat;
+        $validatedData['sabtu'] = $request->sabtu;
+        $validatedData['minggu'] = $request->minggu;
+
+        if($request->file('image')) {
+            if($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('berita-images');
+        }
+
+        Dokter::where('id', $dokter->id)->update($validatedData);
+        return redirect('/naili-administrator/dokter')->with('success', 'Dokter berhasil diedit');
     }
 
     /**
@@ -91,6 +122,10 @@ class DokterController extends Controller
     */
     public function destroy(Dokter $dokter)
     {
-        //
+        if($dokter->image) {
+            Storage::delete($dokter->image);
+        }
+        Dokter::destroy($dokter->id);
+        return redirect('/naili-administrator/dokter')->with('success', 'Dokter berhasil dihapus');
     }
 }

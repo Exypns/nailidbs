@@ -14,9 +14,15 @@ return new class extends Migration
         Schema::create('dokters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('spesialis_id');
-            $table->foreignId('jadwal_id');
             $table->string('nama');
-            $table->string('foto');
+            $table->string('image');
+            $table->string('senin')->nullable()->default('-');
+            $table->string('selasa')->nullable()->default('-');
+            $table->string('rabu')->nullable()->default('-');
+            $table->string('kamis')->nullable()->default('-');
+            $table->string('jumat')->nullable()->default('-');
+            $table->string('sabtu')->nullable()->default('-');
+            $table->string('minggu')->nullable()->default('-');
             $table->timestamps();
         });
     }

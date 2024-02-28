@@ -27,4 +27,12 @@ class LoginControlller extends Controller
 
         return back()->with('loginError', 'Login Tidak Berhasil');
     }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/naili-administrator/login');
+    }
 }

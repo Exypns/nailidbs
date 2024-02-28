@@ -1,24 +1,21 @@
-@extends('admin/app')
+@extends('admin.app')
 @section('content')
 <div class="col-12">
-
-
-  
     <div class="card my-4">
       <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
         <div class="bg-gradient-warning shadow-primary border-radius-lg pt-4 pb-3" style="display: flex; gap: 10px">
           <h6 class="text-white text-capitalize ps-3">{{ $title }}</h6>
-          <a href="/tambah-dokter"><span class="badge badge-sm bg-gradient-success">Tambah Data Dokter</span></a>
+          <a href="/naili-administrator/dokter/tambah-dokter"><span class="badge badge-sm bg-gradient-success">Tambah Data Dokter</span></a>
         </div>
       </div>
       <form action="/naili-administrator/dokter">
         <div class="bg-gradient shadow border-radius-lg pt-4 pb-3" style="display: flex; flex-direction:column; padding:10px; gap:10px">
           <div class="input-group input-group-outline">
-          <label class="form-label">Cari Dokter</label>
+          <label class="form-label">Cari Nama Dokter</label>
           <input type="text" class="form-control" name="search-dokter">
         </div>
-        <select name="search-dokter">
-          <option value="">Pilih Salah Satu</option>
+        <select name="search-dokter" class="bg-gradient shadow border-radius-lg pt-1 pb-1 ">
+          <option value="" >Pilih Spesialis</option>
               @foreach ($spesialis as $item)
                   <option value="{{ $item->id }}">{{ $item->nama_spesialis }}</option>
               @endforeach    
@@ -48,7 +45,6 @@
             </thead>
             <tbody>
             @if ($dokter->count())
-
             @foreach ($dokter as $item)
               <tr>
                 <td>
@@ -63,16 +59,22 @@
                   <p class="text-xs font-weight-bold mb-0">{{ $item->spesialis->nama_spesialis }}</p>
                 </td>
                 <td class="align-middle text text-sm">
-                  {!! $item->jadwal->senin !== '-' ? "<p class='text-xs font-weight-bold mb-0'>Senin : {$item->jadwal->senin} </p>"  : ''!!}
+                  {!! $item->senin !== '-' ? "<p class='text-xs font-weight-bold mb-0'>Senin : {$item->senin} </p>"  : ''!!}
                   {{-- <p class="text-xs font-weight-bold mb-0">Senin : {{ $item->jadwal->senin }}</p> --}}
-                  <p class="text-xs font-weight-bold mb-0">Selasa : {{ $item->jadwal->selasa }}</p>
-                  <p class="text-xs font-weight-bold mb-0">Rabu : {{ $item->jadwal ->rabu }}</p>
-                  <p class="text-xs font-weight-bold mb-0">Kamis : {{ $item->jadwal ->kamis }}</p>
-                  <p class="text-xs font-weight-bold mb-0">Jumat : {{ $item->jadwal ->jumat }}</p>
+                  <p class="text-xs font-weight-bold mb-0">Selasa : {{ $item->selasa }}</p>
+                  <p class="text-xs font-weight-bold mb-0">Rabu : {{ $item->rabu }}</p>
+                  <p class="text-xs font-weight-bold mb-0">Kamis : {{ $item->kamis }}</p>
+                  <p class="text-xs font-weight-bold mb-0">Jumat : {{ $item->jumat }}</p>
+                  <p class="text-xs font-weight-bold mb-0">Sabtu : {{ $item->sabtu }}</p>
+                  <p class="text-xs font-weight-bold mb-0">Minggu : {{ $item->minggu }}</p>
                 </td>
                 <td class="align-middle text-center">
-                  <a href="/edit-dokter"><span class="badge badge-sm bg-gradient-warning">Edit</span></a>
-                  <a href="/edit-dokter"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
+                  <a href="/naili-administrator/dokter/{{ $item->id }}/edit"><span class="badge badge-sm bg-gradient-warning">Edit</span></a>
+                  <form action="/naili-administrator/dokter/{{ $item->id }}" method="post" style="display: inline">
+                    @method('delete')
+                    @csrf
+                    <button class="btn badge badge-sm bg-gradient-danger" onclick="return confirm('Yakin menghapus dokter?')" >Hapus</button>
+                  </form>
                 </td>
               </tr>
               @endforeach

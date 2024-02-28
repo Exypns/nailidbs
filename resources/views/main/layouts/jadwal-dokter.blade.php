@@ -13,12 +13,6 @@
           type="text"
           />
           <div class="filter-dokter">
-        <div class="filter-hari">
-          <label>Hari</label>
-          <select>
-              <option value="">Pilih Salah Satu</option>
-          </select>
-      </div>
       <div class="filter-spesialisasi">
           <label>Spesialisasi</label>
           <select>
@@ -32,80 +26,49 @@
   </div>
     </div>
     <div class="jadwal-dokter-container">
+      @foreach ($dokter as $item)
       <div class="jadwal-dokter-card">
-        <img src="{{ asset('images/dokter-img.png') }}" />
+        <img src="{{ asset('storage/' . $item->image) }}" style="width: 180px; height:180px"/>
         <div class="informasi-dokter">
           <div class="detail-dokter">
             <p class="nama-dokter-jadwal">
-              dr. Vesri Yoga, MARS, Sp.PD, Subsp.GEH (K), FINASIM
+              {{ $item->nama }}
             </p>
-            <p class="spesialis-jadwal">Spesiaslis</p>
+            <p class="spesialis-jadwal">{{ $item->spesialis->nama_spesialis }}</p>
           </div>
           <div class="jadwal">
             <div class="detail-jadwal">
-              <p class="jadwal-hari">Hari</p>
-              <p class="jadwal-jam">13:00 - 16:00</p>
+              {!! $item->senin !== null ? "<p class='jadwal-hari'>Senin </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->senin }}</p>
             </div>
             <div class="detail-jadwal">
-              <p class="jadwal-hari">Hari</p>
-              <p class="jadwal-jam">13:00 - 16:00</p>
+              {!! $item->selasa !== null ? "<p class='jadwal-hari'>Selasa </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->selasa }}</p>
             </div>
             <div class="detail-jadwal">
-              <p class="jadwal-hari">Hari</p>
-              <p class="jadwal-jam">13:00 - 16:00</p>
+              {!! $item->rabu !== null ? "<p class='jadwal-hari'>Rabu </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->rabu }}</p>
             </div>
             <div class="detail-jadwal">
-              <p class="jadwal-hari">Hari</p>
-              <p class="jadwal-jam">13:00 - 16:00</p>
+              {!! $item->kamis !== null ? "<p class='jadwal-hari'>Kamis </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->kamis }}</p>
+            </div>
+            <div class="detail-jadwal">
+              {!! $item->jumat !== null ? "<p class='jadwal-hari'>Jumat </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->jumat }}</p>
+            </div>
+            <div class="detail-jadwal">
+              {!! $item->sabtu !== null ? "<p class='jadwal-hari'>Sabtu </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->sabtu }}</p>
+            </div>
+            <div class="detail-jadwal">              {!! $item->minggu !== null ? "<p class='jadwal-hari'>Minggu </p>"  : ''!!}
+              <p class="jadwal-jam">{{ $item->minggu }}</p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="jadwal-dokter-card">
-        <img src="/public/Ellipse 2.png" />
-        <div class="informasi-dokter">
-          <div class="detail-dokter">
-            <p class="nama-dokter-jadwal">
-              dr. Vesri Yoga, MARS, Sp.PD, Subsp.GEH (K), FINASIM
-            </p>
-            <p class="spesialis-jadwal">Spesiaslis</p>
-          </div>
-          <div class="detail-jadwal">
-            <p class="jadwal-hari">Hari</p>
-            <p class="jadwal-jam">13:00 - 16:00</p>
-          </div>
-        </div>
-      </div>
-      <div class="jadwal-dokter-card">
-        <img src="/public/Ellipse 2.png" />
-        <div class="informasi-dokter">
-          <div class="detail-dokter">
-            <p class="nama-dokter-jadwal">
-              dr. Vesri Yoga, MARS, Sp.PD, Subsp.GEH (K), FINASIM
-            </p>
-            <p class="spesialis-jadwal">Spesiaslis</p>
-          </div>
-          <div class="detail-jadwal">
-            <p class="jadwal-hari">Hari</p>
-            <p class="jadwal-jam">13:00 - 16:00</p>
-          </div>
-        </div>
-      </div>
-      <div class="jadwal-dokter-card">
-        <img src="/public/Ellipse 2.png" />
-        <div class="informasi-dokter">
-          <div class="detail-dokter">
-            <p class="nama-dokter-jadwal">
-              dr. Vesri Yoga, MARS, Sp.PD, Subsp.GEH (K), FINASIM
-            </p>
-            <p class="spesialis-jadwal">Spesiaslis</p>
-          </div>
-          <div class="detail-jadwal">
-            <p class="jadwal-hari">Hari</p>
-            <p class="jadwal-jam">13:00 - 16:00</p>
-          </div>
-        </div>
-      </div>
+      </div>          
+      @endforeach
+
     </div>
   </div>
 @endsection

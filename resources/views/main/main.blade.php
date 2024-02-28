@@ -21,11 +21,11 @@
         </div>
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
-            <li><a href="#" class="nav__link">Home</a></li>
-            <li><a href="#" class="nav__link">Profil</a></li>
-            <li><a href="#" class="nav__link">Centre of Excellence</a></li>
+            <li><a href="/" class="nav__link {{ $section === 'home' ?  'active__link' : ''}}">Home</a></li>
+            <li><a href="/profil" class="nav__link {{ $section === 'profil' ?  'active__link' : ''}}">Profil</a></li>
+            <li><a href="/centre-of-excellence" class="nav__link {{ $section === 'centre-of-excellence' ?  'active__link' : ''}}">Centre of Excellence</a></li>
             <li class="dropdown__item" id="fasilitas-item">
-              <div class="nav__link">
+              <div class="nav__link {{ $section === 'fasilitas' ?  'active__link' : ''}}">
                 Fasilitas
                 <i
                   class="ri-arrow-down-s-line dropdown__arrow"
@@ -37,13 +37,13 @@
                   <a href="#" class="dropdown__link">Fasilitas</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown__link">Layanan</a>
+                  <a href="/fasilitas-pelayanan" class="dropdown__link">Layanan</a>
                 </li>
               </ul>
             </li>
-            <li><a href="#" class="nav__link">Galeri</a></li>
+            <li><a href="/galeri" class="nav__link">Galeri</a></li>
             <li class="dropdown__item" id="artikel-item">
-              <div class="nav__link">
+              <div class="nav__link {{ $section === 'artikel' ?  'active__link' : ''}}">
                 Artikel
                 <i
                   class="ri-arrow-down-s-line dropdown__arrow"
@@ -52,15 +52,15 @@
               </div>
               <ul class="dropdown__menu" id="artikel-menu">
                 <li>
-                  <a href="#" class="dropdown__link">Berita</a>
+                  <a href="/berita" class="dropdown__link">Berita</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown__link">Kegiatan</a>
+                  <a href="/kegiatan" class="dropdown__link">Kegiatan</a>
                 </li>
               </ul>
             </li>
             <li class="dropdown__item" id="informasi-item">
-              <div class="nav__link">
+              <div class="nav__link {{ $section === 'informasi' ?  'active__link' : ''}}">
                 Informasi
                 <i
                   class="ri-arrow-down-s-line dropdown__arrow"
@@ -69,10 +69,10 @@
               </div>
               <ul class="dropdown__menu" id="informasi-menu">
                 <li>
-                  <a href="#" class="dropdown__link">Tenaga Medis</a>
+                  <a href="/tenaga-medis" class="dropdown__link">Tenaga Medis</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown__link">Jadwal Dokter</a>
+                  <a href="/jadwal-dokter" class="dropdown__link">Jadwal Dokter</a>
                 </li>
                 <li>
                   <a href="#" class="dropdown__link">Pengunjung</a>

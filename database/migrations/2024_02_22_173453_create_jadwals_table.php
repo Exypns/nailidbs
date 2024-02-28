@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('dokter_id');
             $table->string('senin')->default('-');
             $table->string('selasa')->default('-');
             $table->string('rabu')->default('-');

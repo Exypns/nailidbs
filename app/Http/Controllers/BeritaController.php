@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -14,13 +15,14 @@ class BeritaController extends Controller
     {
         return view('admin.backend.berita', [
             "title" => "Berita",
-            "berita" => Berita::all()
+            "berita" => Berita::latest()->get()
         ]);
     }
 
     public function berita_single(Berita $berita) {
         return view('admin.backend.berita-show', [
             "title" => "Single Post",
+            'section' => 'artikel',
             "berita" => $berita
         ]);
     }
@@ -30,15 +32,24 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $validatedData = $request->validate([
+            'judul' => 'required|unique:beritas',
+            'image' => 'image',
+            'body' => 'required'
+        ]);
+
+        $validatedData['image'] = $request->file('image')->store('berita-images');
+        Berita::create($validatedData);
+
+        return redirect('/naili-administrator/berita')->with('success', 'Berita berhasil ditambahkan');
     }
 
     /**
@@ -54,7 +65,10 @@ class BeritaController extends Controller
      */
     public function edit(Berita $berita)
     {
-        //
+        return view('admin.backend.berita.edit', [
+            'title' => 'Edit Berita',
+            'berita' => $berita
+        ]);
     }
 
     /**
@@ -62,7 +76,31 @@ class BeritaController extends Controller
      */
     public function update(Request $request, Berita $berita)
     {
-        //
+        // $validatedData = $request->validate([
+        //     'judul' => 'required|unique:beritas',
+        //     'body' => 'required'
+        // ]);
+
+        $rules = [
+            'body' => 'required',
+            'image' => 'image',
+        ];
+
+        if($request->judul != $berita->judul) {
+            $rules['judul'] = 'required|unique:beritas';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        if($request->file('image')) {
+            if($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('berita-images');
+        }
+
+        Berita::where('id', $berita->id)->update($validatedData);
+        return redirect('/naili-administrator/berita')->with('success', 'Berita berhasil diedit');
     }
 
     /**
@@ -70,6 +108,10 @@ class BeritaController extends Controller
      */
     public function destroy(Berita $berita)
     {
-        //
+        if($berita->image) {
+            Storage::delete($berita->image);
+        }
+        Berita::destroy($berita->id);
+        return redirect('/naili-administrator/berita')->with('success', 'Berita berhasil dihapus');
     }
 }

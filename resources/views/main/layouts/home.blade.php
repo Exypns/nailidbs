@@ -36,15 +36,11 @@
  
   <!-- Flyer -->
     <div class="slides">
-      <div class="slide">
-        <img src="{{ asset('main-layouts-assets/header-images/1.png') }}" alt="img">
-      </div>
-      <div class="slide">
-        <img src="{{ asset('main-layouts-assets/header-images/2.png') }}" alt="img">
-      </div>
-      <div class="slide">
-        <img src="{{ asset('main-layouts-assets/header-images/3.png') }}" alt="img">
-      </div>
+      @foreach ($homeHeaders as $homeHeader)
+          <div class="slide" style="max-height: 400px; overflow:hidden">
+            <img src="{{ asset('storage/' . $homeHeader->image) }}" alt="{{ $homeHeader->title }}"/>
+          </div>
+      @endforeach
       <div class="navigation">
         <a class="prev" onclick = "plusSlides(-1)">&#10094;</a>
         <a class="next" onclick = "plusSlides(1)">&#10095;</a>
@@ -108,42 +104,18 @@
 
 
 <div class="kegiatan-slider">
+  @foreach ($kegiatans as $kegiatan)
   <div class="kegiatan-slide">
     <div class="container">
-      <img src="{{ asset('images/kegiatan.png') }}" alt="kegiatan">
+      <img src="{{ asset('storage/' . $kegiatan->image) }}" alt="kegiatan">
     </div>
     <div class="details">
-      <p>Lorem ipsum 1 dolor sit amet, consectetur adipiscing elit. Donec orci eros, ornare.</p>
+      <p>{{ $kegiatan->judul }}</p>
       <button class="btn-kegiatan">Read More<img src="{{ asset('icons/arrow.png') }}"></button>
     </div>
-  </div>
-  <div class="kegiatan-slide">
-    <div class="container">
-      <img src="{{ asset('images/kegiatan.png') }}" alt="kegiatan">
-    </div>
-    <div class="details">
-      <p>Lorem ipsum 2 dolor sit amet, consectetur adipiscing elit. Donec orci eros, ornare.</p>
-      <button class="btn-kegiatan">Read More<img src="{{ asset('icons/arrow.png') }}"></button>
-    </div>
-  </div>
-  <div class="kegiatan-slide">
-    <div class="container">
-      <img src="{{ asset('images/kegiatan.png') }}" alt="kegiatan">
-    </div>
-    <div class="details">
-      <p>Lorem ipsum 3 dolor sit amet, consectetur adipiscing elit. Donec orci eros, ornare.</p>
-      <button class="btn-kegiatan">Read More<img src="{{ asset('icons/arrow.png') }}"></button>
-    </div>
-  </div>
- <div class="kegiatan-slide">
-  <div class="container">
-    <img src="{{ asset('images/kegiatan.png') }}" alt="kegiatan">
-  </div>
-  <div class="details">
-    <p>Lorem ipsum 4 dolor sit amet, consectetur adipiscing elit. Donec orci eros, ornare.</p>
-    <button class="btn-kegiatan">Read More<img src="{{ asset('icons/arrow.png') }}"></button>
-  </div>
-</div>
+  </div>      
+  @endforeach
+
 <div class="kegiatan-ikon">
   <a class="prev" onclick = "plusKegiatanSlides(-1)">&#10094;</a>
   <a class="next" onclick = "plusKegiatanSlides(1)">&#10095;</a>
@@ -273,18 +245,11 @@
 
    <!-- box2annya -->
    <div class="promo-container">
+    @foreach ($promos as $promo)
     <div class="promo-content">
-      <img src="{{ asset('images/Rectanglekegiatan.png') }}">
+      <img src="{{ asset('storage/' . $promo->image) }}">
     </div>
-    <div class="promo-content">
-      <img src="{{ asset('images/Rectanglekegiatan.png') }}">
-    </div>
-    <div class="promo-content">
-      <img src="{{ asset('images/Rectanglekegiatan.png') }}">
-    </div>
-    <div class="promo-content">
-      <img src="{{ asset('images/Rectanglekegiatan.png') }}">
-    </div>
+    @endforeach
     <div class="promo-ikon">
       <a class="prev" onclick = "plusPromoSlides(-1)">&#10094;</a>
       <a class="next" onclick = "plusPromoSlides(1)">&#10095;</a>

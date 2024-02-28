@@ -9,15 +9,10 @@ class Dokter extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama'];
     protected $guarded = ['id'];
-    protected $with = ['spesialis', 'jadwal'];
+    protected $with = ['spesialis'];
 
     public function spesialis() {
         return $this->belongsTo(Spesialis::class);
-    }
-
-    public function jadwal() {
-        return $this->belongsTo(Jadwal::class);
     }
 }

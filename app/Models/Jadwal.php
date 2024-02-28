@@ -10,4 +10,8 @@ class Jadwal extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function dokter() {
+        return $this->belongsTo(Dokter::class);
+    }
 }

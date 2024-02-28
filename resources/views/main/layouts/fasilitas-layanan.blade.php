@@ -23,7 +23,7 @@
 
 <!-- Header -->
 <div class="pelayanan-wrapper">
-  <img src="{{ asset('main-layouts-assets/header-images/1.png') }}" alt="img">
+  <img src="{{ asset('main-layouts-assets/header-images/6.png') }}" alt="img">
   <div class="pelayanan-wrapper-content">
   <p>PELAYANAN</p>
   </div>

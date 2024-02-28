@@ -124,19 +124,19 @@
         <div>
           <p>Layanan</p>
           <ul>
-            <li><a href="">Pelayanan Unggulan</a></li>
-            <li><a href="">Pelayanan Rawat Jalan</a></li>
-            <li><a href="">Pelayanan Rawat Inap</a></li>
-            <li><a href="">Pelayanan Tindakan Medis</a></li>
-            <li><a href="">Pelayanan Penunjang Medis</a></li>
-            <li><a href="">Pelayanan Penunjang Diagnostik </a></li>
+            <li><a href="/fasilitas-layanan">Pelayanan Rawat Jalan</a></li>
+            <li><a href="/fasilitas-layanan">Pelayanan Unggulan</a></li>
+            <li><a href="/fasilitas-layanan">Pelayanan Rawat Inap</a></li>
+            <li><a href="/fasilitas-layanan">Pelayanan Tindakan Medis</a></li>
+            <li><a href="/fasilitas-layanan">Pelayanan Penunjang Medis</a></li>
+            <li><a href="/fasilitas-layanan">Pelayanan Penunjang Diagnostik </a></li>
           </ul>
         </div>
         <div>
           <p>Artikel</p>
           <ul>
-            <li><a href="">Berita</a></li>
-            <li><a href="">Kegiatan</a></li>
+            <li><a href="/artikel-berita">Berita</a></li>
+            <li><a href="/artikel-kegiatan">Kegiatan</a></li>
           </ul>
         </div>
       </div>
@@ -161,14 +161,16 @@
       <div class="footer-row-4">
         <div>
           <p>Follow Us</p>
-          <a href=""
+          <a href="https://www.instagram.com/rsnailidbs.padang/?hl=en"
             ><i><img src="{{ asset('icons/instagram-line.svg') }}" /></i
           ></a>
+          <a href="https://www.facebook.com/rs.nailidbs">
           <i><img src="{{ asset('icons/facebook-circle-line.svg') }}" /> </i>
+          </a>
         </div>
         <div class="contact">
           <p>Contact Us</p>
-          <i class="contact-info"
+          <i class="contact-info" href="https://wa.me/08116604556"
             ><img src="{{ asset('icons/whatsapp-line.svg') }}" />
             <span>Whatsapp<br />08116604556</span></i
           >

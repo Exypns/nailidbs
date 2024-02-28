@@ -14,7 +14,11 @@ class BeritaController extends Controller
     {
         return view('admin.backend.berita', [
             "title" => "Berita",
-            "berita" => Berita::all()
+            "berita" => Berita::all(),
+
+
+
+        return view('artikel-berita', compact('beritas'));
         ]);
     }
 

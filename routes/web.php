@@ -2,11 +2,9 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokterController;
-<<<<<<< HEAD
-=======
+
 use App\Http\Controllers\LoginControlller;
 use App\Http\Controllers\RegisterController;
->>>>>>> 11244e66c68c5b4635ed46037234b4c68bfa2220
 use App\Models\Berita;
 use Illuminate\Support\Facades\Route;
 
@@ -24,37 +22,37 @@ use Illuminate\Support\Facades\Route;
 // MAIN WEBPAGE
 
 Route::get('/', function () {
-    return view('main/layouts/home');
+    return view('main/layouts/home',['title'=> 'Home']) ;
 });
 
 Route::get('/jadwal-dokter', function () {
-    return view('main/layouts/jadwal-dokter');
+    return view('main/layouts/jadwal-dokter',['title'=> 'Profil']);
 });
 
-Route::get('/fasilitas-pelayanan', function () {
-    return view('main/layouts/fasilitas-pelayanan');
+Route::get('/fasilitas-layanan', function () {
+    return view('main/layouts/fasilitas-layanan',['title'=> 'fasilitas-layanan']);
 });
 
 Route::get('/fasilitas', function () {
-    return view('main/layouts/fasilitas');
+    return view('main/layouts/fasilitas',['title'=> 'fasilitas']);
 });
 
-<<<<<<< HEAD
 Route::get('/isi-berita', function () {
-    return view('main/layouts/isi-berita');
+    return view('main/layouts/isi-berita',['title'=> 'isi-berita']);
 });
 
 Route::get('/galeri', function () {
-    return view('main/layouts/galeri');
+    return view('main/layouts/galeri' ,['title'=> 'galeri']);
 });
 
 Route::get('/artikel-berita', function () {
-    return view('main/layouts/artikel-berita');
+    return view('main/layouts/artikel-berita' ,['title'=> 'artikel-berita']);
 });
 
 Route::get('/artikel-kegiatan', function () {
-    return view('main/layouts/artikel-kegiatan');
+    return view('main/layouts/artikel-kegiatan',['title'=> 'artikel-kegiatan']);
 });
+
 
 // ADMIN WEBPAGE
 
@@ -62,7 +60,7 @@ Route::get('/naili-administrator', function () {
     return view('admin/app', ['title' => 'Home']);
 });
 
-=======
+
 // ADMIN WEBPAGE
 
 Route::get('/naili-administrator', function () {
@@ -75,7 +73,6 @@ Route::post('/naili-administrator/login', [LoginControlller::class, 'authenticat
 Route::get('/naili-administrator/register', [RegisterController::class, 'index']);
 Route::post('/naili-administrator/register', [RegisterController::class, 'store']);
 
->>>>>>> 11244e66c68c5b4635ed46037234b4c68bfa2220
 Route::get('/naili-administrator/dokter', [DokterController::class, 'index'])->name('dokter');
 Route::post('tambahdokter', [DokterController::class, 'store']);
 

@@ -101,6 +101,10 @@ a {
     opacity: 0;
 }
 
+.nav__link:hover {
+    background-color: var(--light-orange-color);
+}
+
 /* ==== MOBILE NAVIGATION ==== */
 @media screen and (max-width: 1118px) {
     .nav__menu {
@@ -246,6 +250,7 @@ a {
     }
     .nav__link:hover {
         background-color: transparent;
+        color: #f7961c;
     }
     .dropdown__item {
         position: relative;

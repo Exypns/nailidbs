@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,9 +22,9 @@
         </div>
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
-            <li><a href="#" class="nav__link">Home</a></li>
-            <li><a href="#" class="nav__link">Profil</a></li>
-            <li><a href="#" class="nav__link">Centre of Excellence</a></li>
+              <li><a href="/" class="nav__link {{ ($title === "Home") ? 'active': '' }}">Home</a></li>
+            <li><a href="/profil" class="nav__link {{ ($title === "Profil") ? 'active' : '' }}">Profil</a></li>
+            <li><a href="/centre-of-excellence" class="nav__link {{ ($title === "centre-of-excellence") ? 'active' : '' }}">Centre of Excellence</a></li>
             <li class="dropdown__item" id="fasilitas-item">
               <div class="nav__link">
                 Fasilitas
@@ -34,14 +35,14 @@
               </div>
               <ul class="dropdown__menu" id="fasilitas-menu">
                 <li>
-                  <a href="#" class="dropdown__link">Fasilitas</a>
+                  <a href="/fasilitas" class="dropdown__link {{ ($title === "fasilitas") ? 'active' : '' }}">Fasilitas</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown__link">Layanan</a>
+                  <a href="/fasilitas-layanan" class="dropdown__link {{ ($title === "fasilitas-layanan") ? 'active' : '' }}">Layanan</a>
                 </li>
               </ul>
             </li>
-            <li><a href="#" class="nav__link">Galeri</a></li>
+            <li><a href="/galeri" class="nav__link {{ ($title === "galeri") ? 'active' : '' }}" >Galeri</a></li>
             <li class="dropdown__item" id="artikel-item">
               <div class="nav__link">
                 Artikel
@@ -52,10 +53,10 @@
               </div>
               <ul class="dropdown__menu" id="artikel-menu">
                 <li>
-                  <a href="#" class="dropdown__link">Berita</a>
+                  <a href="/artikel-berita" class="dropdown__link {{ ($title === "artikel-berita") ? 'active' : '' }}">Berita</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown__link">Kegiatan</a>
+                  <a href="/artikel-kegiatan" class="dropdown__link {{ ($title === "artikel-kegiatan") ? 'active' : '' }}">Kegiatan</a>
                 </li>
               </ul>
             </li>
@@ -69,10 +70,10 @@
               </div>
               <ul class="dropdown__menu" id="informasi-menu">
                 <li>
-                  <a href="#" class="dropdown__link">Tenaga Medis</a>
+                  <a href="/tenaga-medis" class="dropdown__link {{ ($title === "tenaga-medis") ? 'active' : '' }}">Tenaga Medis</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown__link">Jadwal Dokter</a>
+                  <a href="/jadwal-dokter" class="dropdown__link {{ ($title === "jadwal-dokter") ? 'active' : '' }}">Jadwal Dokter</a>
                 </li>
                 <li>
                   <a href="#" class="dropdown__link">Pengunjung</a>

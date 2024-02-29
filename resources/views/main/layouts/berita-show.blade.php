@@ -13,7 +13,7 @@
 <body>
     <section>
         <div class="header-isi-berita">
-        <img src="{{ asset('main-layouts-assets/header-images/5.png') }}" alt="img">
+        <img src="{{ asset('main-layouts-assets/header-images/artikel.png') }}" alt="img">
             <div class="isi-wrapper-content">
             <h3>BERITA</h3>
             </div>

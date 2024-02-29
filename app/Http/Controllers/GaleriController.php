@@ -19,6 +19,13 @@ class GaleriController extends Controller
         ]);
     }
 
+    public function indexFE() {
+        return view('main.layouts.galeri', [
+            'section' => 'galeri',
+            'galeri' => Galeri::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

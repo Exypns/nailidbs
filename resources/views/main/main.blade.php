@@ -41,7 +41,7 @@
                 </li>
               </ul>
             </li>
-            <li><a href="/galeri" class="nav__link">Galeri</a></li>
+            <li><a href="/galeri" class="nav__link {{ $section === 'galeri' ?  'active__link' : ''}}">Galeri</a></li>
             <li class="dropdown__item" id="artikel-item">
               <div class="nav__link {{ $section === 'artikel' ?  'active__link' : ''}}">
                 Artikel

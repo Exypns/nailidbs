@@ -57,9 +57,7 @@ Route::get('/fasilitas-pelayanan', function () {
     return view('main.layouts.fasilitas-pelayanan', ['section' => 'fasilitas']);
 });
 
-Route::get('/galeri', function() {
-    return view('main.layouts.galeri', ['section' => 'galeri']);
-});
+Route::get('/galeri', [GaleriController::class, 'indexFE']);
 
 Route::get('/tenaga-medis', [DokterControllerFE::class, 'tenagaMedis']);
 

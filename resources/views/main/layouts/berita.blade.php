@@ -14,7 +14,7 @@
 <body>
 
 <div class="pelayanan-wrapper">
-  <img src="{{ asset('main-layouts-assets/header-images/3.png') }}" alt="img">
+  <img src="{{ asset('main-layouts-assets/header-images/artikel.png') }}" alt="img">
   <div class="pelayanan-wrapper-content">
   <p>BERITA</p>
   </div>

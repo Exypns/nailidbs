@@ -38,13 +38,20 @@ Route::get('/profil', function() {
     return view('main.layouts.profil', ['section' => 'profil']);
 });
 
-Route::get('centre-of-excellence', function() {
+Route::get('/centre-of-excellence', function() {
     return view('main.layouts.centre-of-excellence', ['section' => 'centre-of-excellence']);
 });
 
-Route::get('fasilitas', function() {
+Route::get('/fasilitas', function() {
     return view('main.layouts.fasilitas', ['section' => 'fasilitas']);
 });
+
+Route::get('/kegiatan', [KegiatanController::class, 'indexFE']);
+
+Route::get('/berita', [BeritaController::class, 'indexFE']);
+Route::get('/berita/{berita:judul}', [BeritaController::class, 'berita_single']);
+
+Route::get('/fasilitas', [FasilitasController::class, 'indexFE']);
 
 Route::get('/fasilitas-pelayanan', function () {
     return view('main.layouts.fasilitas-pelayanan', ['section' => 'fasilitas']);
@@ -93,7 +100,7 @@ Route::post('/tambah-berita', [BeritaController::class, 'store']);
 Route::delete('/naili-administrator/berita/{berita:id}', [BeritaController::class, 'destroy']);
 Route::get('/naili-administrator/berita/{berita:id}/edit', [BeritaController::class, 'edit']);
 Route::put('/edit-berita/{berita:id}', [BeritaController::class, 'update']);
-Route::get('/naili-administrator/berita/{berita:judul}', [BeritaController::class, 'berita_single']);
+
 
 // HOME HEADER
 Route::get('/naili-administrator/home-header', [HomeHeaderController::class, 'index'])->middleware('auth');

@@ -19,6 +19,13 @@ class FasilitasController extends Controller
         ]);
     }
 
+    public function indexFE() {
+        return view('main.layouts.fasilitas', [
+            'section' => 'fasilitas',
+            'fasilitas' => Fasilitas::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

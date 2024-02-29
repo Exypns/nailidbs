@@ -1,7 +1,7 @@
 @extends('main/main')
 @section('content')
 <div class="title__page">
-    <img src="{{ asset('main-layouts-assets/header-images/1.png') }}" />
+    <img src="{{ asset('main-layouts-assets/header-images/dokter.png') }}" />
     <h5>Jadwal Dokter</h5>
   </div>
   <div class="jadwal-dokter-page">

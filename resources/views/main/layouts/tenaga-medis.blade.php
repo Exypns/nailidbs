@@ -1,7 +1,7 @@
 @extends('main.main')
 @section('content')
 <div class="title__page">
-    <img src="{{ asset('main-layouts-assets/header-images/5.png') }}" />
+    <img src="{{ asset('main-layouts-assets/header-images/dokter.png') }}" />
     <h5>Tenaga Medis</h5>
   </div>
   <!-- LIST DOKTER -->

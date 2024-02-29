@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Stmt\Return_;
 
 class KegiatanController extends Controller
 {
@@ -15,6 +16,13 @@ class KegiatanController extends Controller
     {
         return view('admin.backend.kegiatan', [
             'title' => 'Kegiatan',
+            'kegiatan' => Kegiatan::latest()->get()
+        ]);
+    }
+
+    public function indexFE() {
+        return view('main.layouts.kegiatan', [
+            'section' => 'artikel',
             'kegiatan' => Kegiatan::latest()->get()
         ]);
     }

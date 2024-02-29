@@ -20,10 +20,17 @@ class BeritaController extends Controller
     }
 
     public function berita_single(Berita $berita) {
-        return view('admin.backend.berita-show', [
+        return view('main.layouts.berita-show', [
             "title" => "Single Post",
             'section' => 'artikel',
             "berita" => $berita
+        ]);
+    }
+
+    public function indexFE() {
+        return view('main.layouts.berita', [
+            'section' => 'artikel',
+            'berita' => Berita::latest()->get()
         ]);
     }
 

@@ -59,7 +59,6 @@
                   <p class="text-xs font-weight-bold mb-0">{{ $item->spesialis->nama_spesialis }}</p>
                 </td>
                 <td class="align-middle text text-sm">
-                  {!! $item->senin !== '-' ? "<p class='text-xs font-weight-bold mb-0'>Senin : {$item->senin} </p>"  : ''!!}
                   {{-- <p class="text-xs font-weight-bold mb-0">Senin : {{ $item->jadwal->senin }}</p> --}}
                   <p class="text-xs font-weight-bold mb-0">Selasa : {{ $item->selasa }}</p>
                   <p class="text-xs font-weight-bold mb-0">Rabu : {{ $item->rabu }}</p>

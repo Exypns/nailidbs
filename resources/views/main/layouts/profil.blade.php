@@ -15,12 +15,17 @@
     <!-- isi -->
 <section>
     <div class="all-profil">
-        <div class="navbar-profil">
+        <!-- <div class="navbar-profil">
             <div>Sejarah</div>
             <div>Visi &amp; Misi</div>
             <div>Nilai-Nilai</div>
             <div>Motto</div>
+        </div> -->
+        <p class="Kegiatan">SEJARAH</p>
+        <div class="Kegiatan-img-container">
+          <img class="Kegiatan-img" src="{{ asset('main-layouts-assets/') }}gambar/garis.png">
         </div>
+        
         <div class="isi-sejarah">
             <div class="container-sejarah1">
                 <img class="gambarsejarah1" src="gambar/sejarah1.png" alt="">
@@ -37,6 +42,11 @@
                     Ratulangi No.24 Kelurahan Kampung Jao Padang, yang berada dipusat kota Padang sehingga mudah dijangkau dari seluruh penjuru.
                 </p>
             </div>
+        </div>
+        <!-- VISI M ISI -->
+        <p class="Kegiatan">VISI MISI</p>
+        <div class="Kegiatan-img-container">
+          <img class="Kegiatan-img" src="gambar/garis.png">
         </div>
         <div class="isi-visimisi">
             <div class="container-visi">
@@ -77,10 +87,16 @@
              
             </div>
         </div>
+        <!-- NILAI-NILAI -->
+        <p class="Kegiatan">NILAI-NILAI</p>
+        <div class="Kegiatan-img-container">
+          <img class="Kegiatan-img" src="gambar/garis.png">
+        </div>
+        </div>
             <div class="container-nilai">
                     <div class="card">
-
-                      <p><img src="gambar/nilai.png" alt="">Ramah</p>
+                        <img src="gambar/nilai.png" alt="">
+                        <p>Ramah</p>
                     </div>
                 
                     <div class="card">
@@ -123,6 +139,11 @@
                       <p>Integritas</p>
                     </div>
              </div>
+             <!-- MOTTO -->
+             <p class="Kegiatan">MOTTO</p>
+             <div class="Kegiatan-img-container">
+               <img class="Kegiatan-img" src="gambar/garis.png">
+             </div>
         <div class="isi-motto">
             <div class="container-motto">
                 <h1>“Profesional, Empati dan Komunikatif dalam Melayani”</h1>
@@ -130,5 +151,6 @@
         </div>
     </div>
 </section>
+    <!-- footer -->
 </body>
 @endsection

@@ -1,238 +1,124 @@
-.all-profil {
-    background: #fff;
-    width: 1440px;
-    height: 1513px;
+/* sejarah */
+.isi-sejarah .container-sejarah1,
+.isi-sejarah .container-sejarah2 {
+    width: 100%;
+    max-width: 1000px; /* Lebar maksimum container */
+    height: auto;
+    background: #fef6ec;
+    box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
+    margin: 0 auto; /* Mengatur margin atas dan bawah, serta menengahkan container */
+    padding: 20px 25px; /* Padding di setiap sisi */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 55px; /* Jarak atas container */
+    margin-bottom: 55px; /* Jarak bawah container */
 }
 
-.navbar-profil {
-    display: flex;
-    flex-direction: row; /* Mengatur tata letak elemen menjadi kolom */
-    align-items: flex-start; /* Memulai penempatan elemen dari sisi kiri */
+.isi-sejarah .container-sejarah1 p,
+.isi-sejarah .container-sejarah2 p {
+    margin-left: 10px;
     text-align: justify;
 }
 
-.navbar-profil div {
-    padding: 10px; /* Menambahkan padding untuk memberikan ruang di sekitar setiap elemen */
-    border-bottom: 3px solid #ccc; /* Menambahkan garis pemisah antar elemen */
-    cursor: pointer; /* Mengubah kursor menjadi tanda tangan saat dihover (opsional) */
-    text-align: left; /* Mengatur teks menjadi rata kiri */
-    white-space: nowrap; /* Mencegah pemisahan baris */
-}
-
-.navbar-profil div:hover {
-    color: #f7961c; /* Memberikan latar belakang saat dihover (opsional) */
-    border-bottom: 3px solid #f7961c;
-}
-.navbar-profil {
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.isi-sejarah .container-sejarah1 {
-    width: 1227px;
-    height: 151px;
-    flex-shrink: 0;
-    background: #fef6ec;
-    box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
-}
-
-.isi-sejarah .container-sejarah2 {
-    width: 1227px;
-    height: 151px;
-    flex-shrink: 0;
-    background: #fef6ec;
-    box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
-}
-.container-sejarah1 {
-    width: 1000px;
-    height: 60px;
-    flex-shrink: 0;
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    justify-content: space-between; /* Mengatur ruang di antara elemen-elemen */
-    align-items: center; /* Memusatkan elemen-elemen secara vertikal */
-    display: flex;
-    padding-right: 38px;
-    padding-left: 25px;
-}
-.container-sejarah2 {
-    width: 994px;
-    height: 65px;
-    flex-shrink: 0;
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    justify-content: space-between; /* Mengatur ruang di antara elemen-elemen */
-    align-items: center; /* Memusatkan elemen-elemen secara vertikal */
-    display: flex;
-    padding-right: 38px;
-    padding-left: 25px;
-}
-
-.container-sejarah1,
-.container-sejarah2 {
-    margin: 55px 107px; /* Menambahkan margin atas dan bawah untuk jarak antar container */
-}
-
-.navbar-profil,
-.container-sejarah1 {
-    margin: 43px 107px;
-}
-
-img .gambarsejarah1 {
+.img-container {
     width: 154px;
     height: auto;
-    flex-shrink: 0;
 }
-.container-sejarah1 p {
-    margin-left: 10px;
+
+.img-container img {
+    width: 100%;
+    height: auto;
 }
-.container-sejarah2 p {
-    margin-left: 10px;
+
+/* Untuk layar dengan lebar kurang dari 880px (tablet dan di bawahnya) */
+@media only screen and (max-width: 880px) {
+    .isi-sejarah .container-sejarah1,
+    .isi-sejarah .container-sejarah2 {
+        flex-direction: column; /* Mengubah arah flex menjadi kolom */
+        align-items: center; /* Memusatkan elemen secara horizontal */
+    }
+
+    .isi-sejarah .container-sejarah1 p,
+    .isi-sejarah .container-sejarah2 p {
+        margin-top: 20px; /* Menambahkan jarak antara gambar dan teks */
+        text-align: center; /* Memusatkan teks */
+    }
+
+    .img-container {
+        order: -1; /* Mengubah urutan gambar menjadi sebelum teks */
+        margin-bottom: 20px; /* Menambahkan jarak antara gambar dan teks */
+    }
 }
-/* ------- */
 
 /* visi misi */
-
-h3 {
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.container-visi {
-    width: 1227px;
-    height: 151px;
-    flex-shrink: 0;
-    background: #fef6ec;
-    box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
+/* VISI MISI */
+.isi-visimisi {
     display: flex;
-    /* justify-content: space-around; */
+    flex-direction: column;
     align-items: center;
-}
-.container-visi h3 {
-    margin-left: 151px;
-}
-.container-visi img {
-    margin-left: 123px;
-    margin-right: 12px;
-}
-
-/* ---- */
-
-.container-misi,
-.isi-container-misi {
-    margin-left: 129px;
-}
-.container-misi {
-    width: 1227px;
-    height: 350px;
-    background: #fef6ec;
-    box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
-    align-items: center; /* Memusatkan elemen-elemen secara vertikal */
-    display: flex; /* Menetapkan tata letak elemen sebagai flex container */
-    align-items: center; /* Posisi anak-anak flex container secara vertikal */
-    justify-content: space-between;
-    padding-left: 151px;
-    margin-left: 107px;
 }
 
 .container-visi,
 .container-misi {
-    margin: 70px 107px; /* Menambahkan margin atas dan bawah untuk jarak antar container */
+    width: 100%;
+    max-width: 800px; /* Atur lebar maksimum konten */
+    background: #fef6ec;
+    box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
+    margin: 40px auto; /* Atur margin di tengah */
+    padding: 20px;
 }
 
-.isi-container-misi img {
-    max-width: 100%;
-    height: auto;
-    margin-right: 10px; /* Menambahkan jarak antara gambar dan teks */
+.container-visi h3,
+.container-misi h3 {
+    margin-bottom: 20px; /* Tambahkan ruang antara judul dan konten */
+    text-align: center;
 }
 
-.isi-container-misi p {
-    flex: 1; /* Mengisi ruang yang tersedia */
-    text-align: left; /* Menentukan alignment teks */
-    margin-left: 10px; /* Menambahkan margin kiri untuk teks */
-}
-
+.sub-visi,
 .sub-misi {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
 }
 
-.container-misi {
-    width: 1075px !important;
-}
-.container-misi :last-child {
-    margin-bottom: 0;
-}
-p {
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-img {
-    max-width: 100%;
-}
-.sub-visi {
-    display: flex;
-    padding-left: 10px;
-    align-items: center;
+.sub-visi img,
+.sub-misi img {
+    margin-right: 15px; /* Atur jarak antara gambar dan teks */
 }
 
-/*  -------- */
-
-.container-misi h3,
-.container-misi p {
-    margin: 0;
-    text-align: left;
+.sub-misi {
+    margin-top: 20px; /* Tambahkan ruang di atas setiap item misi */
 }
 
-/* nilai nilai */
+@media only screen and (max-width: 880px) {
+    .container-visi,
+    .container-misi {
+        padding: 10px; /* Atur padding untuk perangkat dengan lebar kurang dari 880px */
+    }
 
+    .sub-visi img,
+    .sub-misi img {
+        width: 40px; /* Atur ulang lebar gambar untuk perangkat kecil */
+    }
+}
+
+/* nilai */
+/* CSS untuk mengatur kartu (card) nilai-nilai */
 .container-nilai {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    align-content: center;
     justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-.container-nilai .card {
-    width: 200px;
-    margin: 20px;
+.card {
+    width: calc(33.33% - 20px); /* Mengatur lebar kartu */
+    margin: 10px; /* Memberikan jarak antar kartu */
     text-align: center;
     background: #fafafa;
     box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
     padding: 15px;
-}
-
-.card {
-    width: 200px;
-    margin: 20px;
-    text-align: center;
-    cursor: pointer;
 }
 
 .card img {
@@ -240,43 +126,76 @@ img {
     height: auto;
 }
 
-.card:hover {
-    color: #f7961c; /* Memberikan latar belakang saat dihover (opsional) */
-    border-bottom: 1px solid #f7961c;
+.card p {
+    margin-top: 10px; /* Memberikan jarak antara gambar dan teks */
+}
+
+/* Untuk layar dengan lebar kurang dari 880px (tablet dan di bawahnya) */
+@media only screen and (max-width: 880px) {
+    .card {
+        width: calc(
+            50% - 20px
+        ); /* Mengatur lebar kartu untuk tampilan tablet */
+    }
+}
+
+/* Untuk layar dengan lebar kurang dari 600px (smartphone dan di bawahnya) */
+@media only screen and (max-width: 600px) {
+    .card {
+        width: calc(
+            100% - 20px
+        ); /* Mengatur lebar kartu untuk tampilan smartphone */
+    }
 }
 
 /* motto */
-
+/* MOTTO */
 .isi-motto {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
 .container-motto {
-    width: 1227px;
-    height: 522px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 800px; /* Atur lebar maksimum konten */
     background: #fef6ec;
     box-shadow: 0px 2px 16px 1px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    text-align: center; /* Tambahkan properti text-align: center; untuk teks horizontal */
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    /* margin-left: 107px; */
+    margin: 40px auto; /* Atur margin di tengah */
+    padding: 20px;
 }
 
 .container-motto h1 {
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    text-align: center; /* Teks menjadi rata tengah */
+    margin: 60px; /* Hilangkan margin default */
+}
+
+@media only screen and (max-width: 880px) {
+    .container-motto {
+        padding: 10px; /* Atur padding untuk perangkat dengan lebar kurang dari 880px */
+    }
+}
+
+.Kegiatan {
+    text-align: center; /* Menengahkan teks */
+    margin-bottom: 20px; /* Memberi jarak bawah */
+}
+
+.Kegiatan-img-container {
     display: flex;
-    align-items: center;
-    justify-content: center; /* Tambahkan properti justify-content: center; untuk teks vertikal */
+    justify-content: center; /* Menengahkan gambar */
+    margin-bottom: 20px; /* Memberi jarak bawah */
+}
+/* Untuk menengahkan elemen pada ukuran layar kecil */
+@media only screen and (max-width: 880px) {
+    .Kegiatan {
+        text-align: center; /* Menengahkan teks */
+        margin-left: 35px;
+    }
+
+    .Kegiatan-img-container {
+        display: flex;
+        justify-content: center; /* Menengahkan gambar */
+        margin-left: 35px;
+    }
 }

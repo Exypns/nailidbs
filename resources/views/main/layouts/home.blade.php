@@ -313,7 +313,7 @@
    </div>
 
     <!-- box2annya -->
-    <div class="feedback-container">
+    {{-- <div class="feedback-container">
       <table>
         <form action="" method="">
     <tr>
@@ -342,6 +342,6 @@
   </tr>
 </form>
 </table>
-</div>
+</div> --}}
 </body>
 @endsection

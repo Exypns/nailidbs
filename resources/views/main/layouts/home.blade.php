@@ -307,13 +307,13 @@
    </div>
 
    <!-- Feedback -->
-   <p class="Feedback">FORMULIR UMPAN BALIK</p>
+   {{-- <p class="Feedback">FORMULIR UMPAN BALIK</p>
    <div class="Feedback-img-container">
      <img class="Feedback-img" src="{{ asset('icons/garisRS.svg') }}">
    </div>
 
     <!-- box2annya -->
-    {{-- <div class="feedback-container">
+    <div class="feedback-container">
       <table>
         <form action="" method="">
     <tr>

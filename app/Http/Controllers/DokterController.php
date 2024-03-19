@@ -13,15 +13,21 @@ class DokterController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $dokter = Dokter::latest();
         $spesialis = Spesialis::all();
 
-        if (request('search-dokter')) {
-            // $dokter->where('nama', 'like', '%' . request('search-dokter') . '%');
-                //    ->orWhere('spesialis_id', 'like', '%' . request('search-dokter') . '%');
-            $dokter->where('spesialis_id', 'like', '%' . request('search-dokter') . '%');
+        $searchDokter = $request->input('search-dokter');
+
+        $searchSpesialis = $request->input('search-spesialis');
+    
+        if ($searchDokter) {
+            $dokter->where('nama', 'like', '%' . $searchDokter . '%');
+        }
+    
+        if ($searchSpesialis && $searchSpesialis != 'Pilih Salah Satu') {
+            $dokter->where('spesialis_id', $searchSpesialis);
         }
 
         return view('admin.backend.dokter', [

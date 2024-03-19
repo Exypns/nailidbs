@@ -11,11 +11,19 @@ class FasilitasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $fasilitas = Fasilitas::latest();
+
+        $searchFasilitas = $request->input('search-fasilitas');
+
+        if ($searchFasilitas) {
+            $fasilitas->where('nama_fasilitas', 'like', '%' . $searchFasilitas . '%');
+        }
+
         return view('admin.backend.fasilitas', [
             'title' => 'Fasilitas',
-            'fasilitas' => Fasilitas::all()
+            'fasilitas' => $fasilitas->get()
         ]);
     }
 

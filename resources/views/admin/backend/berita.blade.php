@@ -8,7 +8,7 @@
           <a href="/naili-administrator/berita/tambah-berita"><span class="badge badge-sm bg-gradient-success">Tambah Berita</span></a>
         </div>
       </div>
-      <form action="/naili-administrator/dokter">
+      <form action="/naili-administrator/berita">
         <div class="bg-gradient shadow border-radius-lg pt-4 pb-3" style="display: flex; flex-direction:column; padding:10px; gap:10px">
           <div class="input-group input-group-outline">
           <label class="form-label">Cari Berita</label>

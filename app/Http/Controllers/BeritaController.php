@@ -11,11 +11,19 @@ class BeritaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $berita = Berita::latest();
+        
+        $searchBerita = $request->input('search-berita');
+
+        if ($searchBerita) {
+            $berita->where('judul', 'like', '%' . $searchBerita . '%');
+        }
+
         return view('admin.backend.berita', [
             "title" => "Berita",
-            "berita" => Berita::latest()->get()
+            "berita" => $berita->get()
         ]);
     }
 

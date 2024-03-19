@@ -12,11 +12,19 @@ class KegiatanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $kegiatan = Kegiatan::latest();
+
+        $searchKegiatan = $request->input('search-kegiatan');
+
+        if ($searchKegiatan) {
+            $kegiatan->where('judul', 'like', '%' . $searchKegiatan . '%');
+        }
+
         return view('admin.backend.kegiatan', [
             'title' => 'Kegiatan',
-            'kegiatan' => Kegiatan::latest()->get()
+            'kegiatan' => $kegiatan->get()
         ]);
     }
 

@@ -11,11 +11,19 @@ class PromoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $promo = Promo::latest();
+
+        $searchPromo = $request->input('search-promo');
+
+        if ($searchPromo) {
+            $promo->where('title', 'like', '%' . $searchPromo . '%');
+        }
+
         return view('admin.backend.promo', [
             'title' => 'Promo',
-            'promo' => Promo::all()
+            'promo' => $promo->get()
         ]);
     }
 

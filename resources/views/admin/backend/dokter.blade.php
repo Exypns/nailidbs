@@ -14,7 +14,7 @@
           <label class="form-label">Cari Nama Dokter</label>
           <input type="text" class="form-control" name="search-dokter">
         </div>
-        <select name="search-dokter" class="bg-gradient shadow border-radius-lg pt-1 pb-1 ">
+        <select name="search-spesialis" class="bg-gradient shadow border-radius-lg pt-1 pb-1 ">
           <option value="" >Pilih Spesialis</option>
               @foreach ($spesialis as $item)
                   <option value="{{ $item->id }}">{{ $item->nama_spesialis }}</option>

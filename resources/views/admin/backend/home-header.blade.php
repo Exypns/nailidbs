@@ -9,17 +9,6 @@
           <a href="/naili-administrator/home-header/tambah-home-header"><span class="badge badge-sm bg-gradient-success">Tambah Home Header</span></a>
         </div>
       </div>
-      <form action="/naili-administrator/dokter">
-        <div class="bg-gradient shadow border-radius-lg pt-4 pb-3" style="display: flex; flex-direction:column; padding:10px; gap:10px">
-          <div class="input-group input-group-outline">
-          <label class="form-label">Cari Home Header</label>
-          <input type="text" class="form-control" name="search-berita">
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12">
-          <button class="btn bg-gradient-success w-50 mb-0 toast-btn" type="submit" >Cari</button>
-        </div>
-      </div>
-    </form>
     @if (session()->has('success')) 
     <br>
     <div class="alert alert-success alert-dismissible text-white mx-3" role="alert">

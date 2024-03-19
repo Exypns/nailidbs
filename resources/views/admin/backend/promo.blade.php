@@ -12,7 +12,7 @@
         <div class="bg-gradient shadow border-radius-lg pt-4 pb-3" style="display: flex; flex-direction:column; padding:10px; gap:10px">
           <div class="input-group input-group-outline">
           <label class="form-label">Cari Promo</label>
-          <input type="text" class="form-control" name="search-berita">
+          <input type="text" class="form-control" name="search-promo">
         </div>
         <div class="col-lg-3 col-sm-6 col-12">
           <button class="btn bg-gradient-success w-50 mb-0 toast-btn" type="submit" >Cari</button>
